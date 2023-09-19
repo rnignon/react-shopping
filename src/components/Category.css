@@ -1,0 +1,14 @@
+.category__button {
+  background-color: transparent;
+  padding: 1em 2em;
+  margin: 0 0.5em;
+  border: none;
+  box-shadow: 0px 0px 1px 0.1px rgb(0, 0, 0, 1);
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.category__button:hover {
+  background-color: gainsboro;
+  transition: 500ms;
+}

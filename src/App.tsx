@@ -1,24 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { Outlet, Route, Routes } from "react-router-dom";
+
+import Nav from "./components/Nav.tsx";
+import MainPage from "./pages/MainPage";
+import DetailPage from "./pages/DetailPage";
+import LoginPage from "./pages/LoginPage";
+import CartPage from "./pages/CartPage";
+
+const Layout = () => {
+  return (
+    <div>
+      <Nav />
+      <Outlet />
+    </div>
+  );
+};
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<MainPage />} />
+          <Route path="login" element={<LoginPage />} />
+          <Route path="cart" element={<CartPage />} />
+          <Route path="detail/:productId" element={<DetailPage />} />
+        </Route>
+      </Routes>
     </div>
   );
 }
