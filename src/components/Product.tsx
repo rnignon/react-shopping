@@ -3,15 +3,19 @@ import axios from "../api/axios";
 import "./Product.css";
 import "./Spinner.tsx";
 import Spinner from "./Spinner.tsx";
-import { Item } from "../type.ts";
+import { ProductItem } from "../type.ts";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addCartItem } from "../actions/cartActions.ts";
+import { RootState } from "../store.tsx";
 
 interface Props {
   fetchUrl: string;
 }
 
 export default function Product({ fetchUrl }: Props) {
-  const [products, setProducts] = useState<Item[]>([]);
+  const dispatch = useDispatch();
+  const [products, setProducts] = useState<ProductItem[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -30,6 +34,13 @@ export default function Product({ fetchUrl }: Props) {
     fetchProductData();
   }, [fetchUrl]);
 
+  const addToCart = (item: ProductItem) => {
+    dispatch(addCartItem(item));
+  };
+
+  const cart = useSelector((state: RootState) => state.cart);
+  console.log(cart);
+
   return (
     <div className="products">
       {loading ? (
@@ -38,24 +49,32 @@ export default function Product({ fetchUrl }: Props) {
         <>
           <p className="products__total">Showing : {products.length} items</p>
           <div className="product-container">
-            {products.map((product: Item) => {
+            {products.map((product: ProductItem) => {
               return (
-                <Link
-                  key={product.id}
-                  className="product"
-                  to={`detail/${product.id}`}
-                >
-                  <img
-                    className="product__img"
-                    src={product.image}
-                    alt={`${product.title}`}
-                  />
-                  <p className="product__title">{product.title}</p>
-                  <div className="product__info">
-                    <button className="product__cart">장바구니에 담기</button>
+                <div key={product.id} className="product">
+                  <Link
+                    className="product__info__primary"
+                    to={`detail/${product.id}`}
+                  >
+                    {""}
+                    <img
+                      className="product__img"
+                      src={product.image}
+                      alt={`${product.title}`}
+                    />
+                    <p className="product__title">{product.title}</p>
+                  </Link>
+
+                  <div className="product__info__secondary">
+                    <button
+                      onClick={() => addToCart(product)}
+                      className="product__cart"
+                    >
+                      장바구니에 담기
+                    </button>
                     <p className="product__price">{product.price}$</p>
                   </div>
-                </Link>
+                </div>
               );
             })}
           </div>

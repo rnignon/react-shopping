@@ -3,9 +3,18 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import "./Nav.css";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../store";
+import { setMemberLogout } from "../actions/memberActions";
 
 export default function Nav() {
-  // 리덕스 : 샵 누르면 '모두'로 가도록
+  const loggedin = useSelector((state: RootState) => state.member);
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(setMemberLogout());
+  };
+
   return (
     <div className="nav">
       <Link to="/" className="nav__logo">
@@ -18,10 +27,15 @@ export default function Nav() {
         <Link className="nav__mypage" to="mypage">
           <IoPersonCircleOutline className="icon"></IoPersonCircleOutline>
         </Link>
-        <Link className="nav__login" to="login">
-          LOGIN
-        </Link>
-        <button className="nav__logout">LOGOUT</button>
+        {loggedin === null ? (
+          <Link className="nav__login" to="login">
+            LOGIN
+          </Link>
+        ) : (
+          <button onClick={handleLogout} className="nav__logout">
+            LOGOUT
+          </button>
+        )}
       </div>
     </div>
   );
