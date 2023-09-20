@@ -8,6 +8,7 @@ import {
   deleteCartItem,
   incrementCartItem,
 } from "../actions/cartActions";
+import { Link } from "react-router-dom";
 
 interface Props {
   item: ProductCartItem;
@@ -35,7 +36,9 @@ export default function CartItem({ item }: Props) {
       <div className="cart__item__info__container">
         <div className="cart__item__info">
           <p className="cart__item__category">{category}</p>
-          <p className="cart__item__title">{title}</p>
+          <Link className="cart__item__title" to={`/detail/${id}`}>
+            {title}
+          </Link>
           <p className="cart__item__cost">
             {price} X {quantity} = $ {(price * quantity).toFixed(2)}
           </p>

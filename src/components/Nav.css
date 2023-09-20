@@ -29,8 +29,7 @@
   transition: 500ms;
 }
 
-.nav__cart > .icon,
-.nav__mypage > .icon {
+.icon {
   font-size: 2em;
 }
 
@@ -43,4 +42,43 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+
+.nav__cart__link {
+  color: black;
+}
+
+.nav__cart__info {
+  position: relative;
+}
+.nav__cart__alert {
+  position: absolute;
+  bottom: 1.4em;
+  left: 1.4em;
+  padding: 0 0.2em;
+
+  color: white;
+  text-align: center;
+  background-color: indianred;
+  border-radius: 50%;
+}
+
+.nav__cart__modal {
+  z-index: 2;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+
+  min-width: 20em;
+  padding: 1em 2em;
+  position: absolute;
+  right: 50%;
+  transform: translateX(30%);
+}
+
+.nav__cart__tocart {
+  color: gray;
 }

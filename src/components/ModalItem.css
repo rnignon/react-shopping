@@ -1,0 +1,68 @@
+.modal__item {
+  width: 20em;
+  display: flex;
+  align-items: center;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid lightgray;
+  overflow: hidden;
+}
+
+.modal__item__image {
+  max-width: 50px;
+}
+
+.modal__item__info__container {
+  width: 100%;
+  margin-left: 1em;
+  overflow: hidden;
+}
+
+.modal__item__info > * {
+  margin: 0.3em;
+}
+
+.modal__item__category {
+  color: gray;
+  font-size: 0.8em;
+}
+
+.modal__item__title {
+  width: 100%;
+  font-weight: 600;
+  color: black;
+  text-decoration: none;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.modal__item__quantity__container {
+  display: flex;
+  align-items: center;
+}
+
+.modal__item__quantity__container > * {
+  padding: 0.4em 0.8em;
+  border: 1px solid silver;
+  margin: 0.2em;
+}
+
+.modal__button__decrement,
+.modal__button__increment {
+  padding: 0.64em 1em;
+}
+
+.modal__item__delete {
+  font-size: 1.2em;
+  color: darkgray;
+  padding: 0.5em;
+  background-color: transparent;
+  border: none;
+}
+
+.modal__item__delete:hover {
+  cursor: pointer;
+  color: darkgray;
+  transition: 300ms;
+}

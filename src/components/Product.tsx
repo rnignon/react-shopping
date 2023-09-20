@@ -39,7 +39,6 @@ export default function Product({ fetchUrl }: Props) {
   };
 
   const cart = useSelector((state: RootState) => state.cart);
-  console.log(cart);
 
   return (
     <div className="products">
