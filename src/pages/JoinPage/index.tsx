@@ -1,5 +1,5 @@
 import React, { FormEvent, useState } from "react";
-import { firebaseAuth } from "../../firebase-config";
+import { firebaseAuth } from "../../firebase-config.ts";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import "./JoinPage.css";

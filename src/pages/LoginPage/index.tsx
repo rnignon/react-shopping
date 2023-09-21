@@ -1,13 +1,10 @@
 import React, { FormEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./LoginPage.css";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
-import { firebaseAuth } from "../../firebase-config";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { firebaseAuth } from "../../firebase-config.ts";
 import { useDispatch } from "react-redux";
-import { setMemberLogin } from "../../actions/memberActions";
+import { setMemberLogin } from "../../actions/memberActions.ts";
 
 export default function LoginPage() {
   const dispatch = useDispatch();

@@ -1,7 +1,7 @@
-import axios from "../api/axios";
-import { FETCH_SELECTED_ITEM } from "./ActionTypes";
+import axios from "../api/axios.tsx";
+import { FETCH_SELECTED_ITEM } from "./ActionTypes.ts";
 import { Dispatch } from "redux";
-import requests from "../api/requests";
+import requests from "../api/requests.tsx";
 
 export const fetchSelectedItem =
   (productId: number): any =>

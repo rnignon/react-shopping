@@ -9,7 +9,6 @@ import LoginPage from "./pages/LoginPage";
 import CartPage from "./pages/CartPage";
 import MyPage from "./pages/MyPgae/index.tsx";
 import JoinPage from "./pages/JoinPage/index.tsx";
-import { firebaseApp } from "./firebase-config.ts";
 
 const Layout = () => {
   return (

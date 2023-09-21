@@ -1,5 +1,4 @@
-import {} from "../actions/ActionTypes";
-import { SET_MEMBER_LOGIN, SET_MEMBER_LOGOUT } from "../actions/ActionTypes";
+import { SET_MEMBER_LOGIN, SET_MEMBER_LOGOUT } from "../actions/ActionTypes.ts";
 
 const initialState: string | null = null;
 

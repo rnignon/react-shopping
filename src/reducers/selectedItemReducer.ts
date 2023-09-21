@@ -1,5 +1,5 @@
-import { FETCH_SELECTED_ITEM } from "../actions/ActionTypes";
-import { ProductItem } from "../type";
+import { FETCH_SELECTED_ITEM } from "../actions/ActionTypes.ts";
+import { ProductItem } from "../type.ts";
 
 const initialState: ProductItem = {
   id: 0,

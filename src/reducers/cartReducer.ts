@@ -3,8 +3,8 @@ import {
   DELETE_CART_ITEM,
   INCREMENT_CART_ITEM,
   DECREMENT_CART_ITEM,
-} from "../actions/ActionTypes";
-import { ProductCartItem } from "../type";
+} from "../actions/ActionTypes.ts";
+import { ProductCartItem } from "../type.ts";
 
 const initialState: ProductCartItem[] = [];
 

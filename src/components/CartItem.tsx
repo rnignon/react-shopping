@@ -1,5 +1,5 @@
 import React from "react";
-import { ProductCartItem } from "../type";
+import { ProductCartItem } from "../type.ts";
 import { BsFillTrashFill } from "react-icons/bs";
 import "./CartItem.css";
 import { useDispatch } from "react-redux";
@@ -7,7 +7,7 @@ import {
   decrementCartItem,
   deleteCartItem,
   incrementCartItem,
-} from "../actions/cartActions";
+} from "../actions/cartActions.ts";
 import { Link } from "react-router-dom";
 
 interface Props {

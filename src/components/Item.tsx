@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../store";
+import { RootState } from "../store.tsx";
 import "./Item.css";
-import { ProductItem } from "../type";
-import { addCartItem } from "../actions/cartActions";
+import { ProductItem } from "../type.ts";
+import { addCartItem } from "../actions/cartActions.ts";
 import { useNavigate } from "react-router-dom";
 
 export default function Item() {

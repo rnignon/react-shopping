@@ -1,9 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { RootState } from "../../store";
-import CartItem from "../../components/CartItem";
+import { RootState } from "../../store.tsx";
+import CartItem from "../../components/CartItem.tsx";
 import "./CartPage.css";
-import { ProductCartItem } from "../../type";
+import { ProductCartItem } from "../../type.ts";
 import { TiShoppingCart } from "react-icons/ti";
 import { Link } from "react-router-dom";
 

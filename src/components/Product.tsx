@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
-import axios from "../api/axios";
+import axios from "../api/axios.tsx";
 import "./Product.css";
 import "./Spinner.tsx";
 import Spinner from "./Spinner.tsx";
 import { ProductItem } from "../type.ts";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addCartItem } from "../actions/cartActions.ts";
-import { RootState } from "../store.tsx";
 
 interface Props {
   fetchUrl: string;
@@ -37,8 +36,6 @@ export default function Product({ fetchUrl }: Props) {
   const addToCart = (item: ProductItem) => {
     dispatch(addCartItem(item));
   };
-
-  const cart = useSelector((state: RootState) => state.cart);
 
   return (
     <div className="products">

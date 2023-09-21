@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Product from "../../components/Product";
-import Category from "../../components/Category";
-import requests from "../../api/requests";
+import Product from "../../components/Product.tsx";
+import Category from "../../components/Category.tsx";
+import requests from "../../api/requests.tsx";
 import "./MainPage.css";
 
 export default function MainPage() {

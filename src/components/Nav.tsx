@@ -4,9 +4,9 @@ import { IoPersonCircleOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import "./Nav.css";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../store";
-import { setMemberLogout } from "../actions/memberActions";
-import ModalItem from "./ModalItem";
+import { RootState } from "../store.tsx";
+import { setMemberLogout } from "../actions/memberActions.ts";
+import ModalItem from "./ModalItem.tsx";
 
 export default function Nav() {
   const loggedin = useSelector((state: RootState) => state.member);
